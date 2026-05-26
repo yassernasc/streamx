@@ -790,6 +790,20 @@ class Readable extends Stream {
     }
   }
 
+  static deferred(fn, opts) {
+    const out = new PassThrough(opts)
+
+    fn()
+      .then((src) => {
+        if (src === null) return out.end()
+        if (out.destroying) return
+        pipeline(src, out, noop)
+      })
+      .catch((err) => out.destroy(err))
+
+    return out
+  }
+
   setEncoding(encoding) {
     const dec = new TextDecoder(encoding)
     const map = this._readableState.map || echo
