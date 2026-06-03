@@ -23,11 +23,28 @@
     "b4a": "^1.6.6",
     "bare-abort-controller": "^1.1.2",
     "bare-buffer": "^3.6.1",
+    "bare-events": "^2.9.1",
     "brittle": "^3.1.1",
     "end-of-stream": "^1.4.4",
     "lunte": "^1.8.0",
     "prettier": "^3.6.2",
     "prettier-config-holepunch": "^2.0.0"
+  },
+  "peerDependencies": {
+    "bare-abort-controller": "*",
+    "bare-buffer": "*",
+    "bare-events": "*"
+  },
+  "peerDependenciesMeta": {
+    "bare-abort-controller": {
+      "optional": true
+    },
+    "bare-buffer": {
+      "optional": true
+    },
+    "bare-events": {
+      "optional": true
+    }
   },
   "files": [
     "index.js",
