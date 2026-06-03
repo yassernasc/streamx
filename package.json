@@ -4,9 +4,15 @@
   "description": "An iteration of the Node.js core streams with a series of improvements",
   "main": "index.js",
   "exports": {
-    ".": "./index.js",
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
     "./package": "./package.json",
-    "./errors": "./lib/errors"
+    "./errors": {
+      "types": "./lib/errors.d.ts",
+      "default": "./lib/errors"
+    }
   },
   "dependencies": {
     "events-universal": "^1.0.0",
@@ -15,6 +21,8 @@
   },
   "devDependencies": {
     "b4a": "^1.6.6",
+    "bare-abort-controller": "^1.1.2",
+    "bare-buffer": "^3.6.1",
     "brittle": "^3.1.1",
     "end-of-stream": "^1.4.4",
     "lunte": "^1.8.0",
