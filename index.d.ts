@@ -75,7 +75,7 @@ interface WritableOptions<S extends Writable = Writable> extends StreamOptions<S
   writev?(this: S, batch: unknown[], cb: StreamCallback): void
 }
 
-interface Writable<M extends WritableEvents = WritableEvents> {
+interface Writable<M extends WritableEvents = WritableEvents> extends Stream<M> {
   _write(data: unknown, cb: StreamCallback): void
   _writev(batch: unknown[], cb: StreamCallback): void
   _final(cb: StreamCallback): void
