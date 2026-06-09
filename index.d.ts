@@ -1,6 +1,4 @@
-import EventEmitter, { EventMap } from 'bare-events'
-import { BufferEncoding } from 'bare-buffer'
-import { AbortSignal } from 'bare-abort-controller'
+import { BufferEncoding, EventMap, EventEmitter } from './runtime'
 
 interface StreamCallback {
   (err: Error | null): void
